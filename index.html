@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.png">
+<title>تسويق — وكالة تسويق رقمي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: confident, warm, direct — an agency that talks like a partner, not a brochure.
+   IDEA: a broadcast — one small message becomes a wide ripple of impact (the logo's two dots).
+   PICTURE: the ت mark at the centre of rings that keep spreading, the four services riding the waves.
+   COLOUR and TYPE: ink navy fields, ivory ground, ember only for impact; Alexandria throughout.
+   LAYOUT: full-width bands — navy hero, ivory services, growing-dot process, FAQ, navy contact. */
+:root{color-scheme:light dark;--bg:light-dark(#F7F4EE,#0A0E22);--ink:light-dark(#0F1535,#EEF0F7);--card:light-dark(#FFFFFF,#131A3D);--line:light-dark(#E2DDD2,#252D58);--mute:light-dark(#555C73,#A9AEC4);--navy:#0F1535;--ember:#FF5A2C;--ivory:#F7F4EE}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 'Alexandria',system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,104px) max(5vw,16px)}
+h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance}
+h2{font-size:clamp(28px,3.6vw,44px);font-weight:800}
+p{margin:0}
+.lead{font-size:17px;color:var(--mute);max-width:620px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font:700 16px 'Alexandria',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+.btn-ember{background:var(--ember);color:var(--navy)}
+.btn-ghost{background:transparent;color:var(--ivory);box-shadow:inset 0 0 0 1.5px rgba(247,244,238,.55)}
+.logo{display:block;height:44px;width:auto}
+/* header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px 32px;padding:14px max(5vw,16px);flex-wrap:wrap}
+.nav nav{display:flex;gap:4px 28px;flex-wrap:wrap;font-weight:500}
+.nav nav a{text-decoration:none;padding:8px 0}
+.nav nav a:hover{color:var(--ember)}
+.nav .btn{min-height:46px;padding:0 22px;font-size:15px;background:var(--navy);color:var(--ivory)}
+:root[data-theme=dark] .nav .btn{background:var(--ivory);color:var(--navy)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .nav .btn{background:var(--ivory);color:var(--navy)}}
+/* hero */
+.hero{background:var(--navy);color:var(--ivory)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,66px);font-weight:800;line-height:1.15}
+.hero .lead{color:#C9CCDB;font-size:18px;margin-top:22px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.where{display:flex;align-items:center;gap:10px;margin-top:34px;font-size:15px;color:#A9AEC4}
+.where i{width:9px;height:9px;border-radius:50%;background:var(--ember);flex:none}
+.fig{position:relative;aspect-ratio:1;width:100%;max-width:560px;justify-self:center}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+.ripple{transform-origin:260px 240px;animation:ripple 4.8s cubic-bezier(.2,.6,.3,1) infinite;opacity:0}
+.ripple:nth-of-type(2){animation-delay:1.6s}.ripple:nth-of-type(3){animation-delay:3.2s}
+@keyframes ripple{0%{transform:scale(.25);opacity:.55}100%{transform:scale(1);opacity:0}}
+@media (prefers-reduced-motion:reduce){.ripple{animation:none;opacity:.18}html{scroll-behavior:auto}.btn{transition:none}}
+.chip{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;white-space:nowrap;background:#18204A;border:1px solid #2C3566;color:var(--ivory);font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--ember)}
+/* services */
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px;margin-bottom:40px}
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 48px;background:var(--ember);color:var(--navy);border-radius:32px;padding:clamp(28px,4vw,52px);position:relative;overflow:hidden}
+.feature h3{font-size:clamp(26px,3vw,36px);font-weight:800}
+.feature p{margin-top:14px;font-size:17px}
+.tag{display:inline-block;font-size:14px;font-weight:700;margin-bottom:14px;background:rgba(15,21,53,.12);padding:6px 14px;border-radius:999px}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px;align-content:center}
+.ticks li{display:flex;gap:12px;align-items:baseline;font-weight:500}
+.ticks li::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;flex:none;transform:translateY(-2px)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.card svg{width:44px;height:44px;color:var(--ember)}
+.card h3{font-size:22px;font-weight:700}
+.card p{color:var(--mute);font-size:15.5px}
+.card .ticks{font-size:15px;gap:8px;margin-top:4px}
+.card .ticks li::before{background:var(--ember);width:7px;height:7px}
+/* process */
+.process{background:var(--card);border-block:1px solid var(--line)}
+.steps{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;position:relative}
+.steps::before{content:"";position:absolute;top:28px;right:0;left:0;height:2px;background:var(--line)}
+.steps li{position:relative;display:flex;flex-direction:column;gap:10px}
+.dot{height:56px;display:flex;align-items:center}
+.dot i{display:block;border-radius:50%;background:var(--ember);box-shadow:0 0 0 8px var(--card)}
+.steps h3{font-size:20px;font-weight:700;margin-top:8px}
+.steps p{color:var(--mute);font-size:15.5px}
+/* get */
+.get{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:8px}
+.get div{display:flex;gap:16px;align-items:flex-start;padding:24px 0;border-top:1px solid var(--line)}
+.get b{display:block;font-size:18px;margin-bottom:4px}
+.get span{color:var(--mute);font-size:15.5px}
+.get i{width:12px;height:12px;border-radius:50%;background:var(--ember);flex:none;margin-top:9px}
+/* faq */
+.faq{max-width:860px;margin:0 auto}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:18px;font-weight:600;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:26px;font-weight:400;color:var(--ember);flex:none;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--mute);max-width:720px}
+/* contact */
+.contact{background:var(--navy);color:var(--ivory)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.contact .lead{color:#C9CCDB;margin-top:18px}
+.pair{position:relative;height:150px;margin-top:40px}
+.pair i{position:absolute;border-radius:50%;background:var(--ember)}
+form{background:#141B42;border:1px solid #273061;border-radius:28px;padding:clamp(24px,3vw,40px);display:grid;gap:18px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+label{display:grid;gap:8px;font-size:15px;font-weight:500;color:#DADDEA}
+input,select,textarea{font:16px 'Alexandria',sans-serif;color:var(--ivory);background:#0F1535;border:1px solid #333D72;border-radius:14px;padding:13px 16px;min-height:50px;width:100%}
+textarea{min-height:120px;resize:vertical}
+select option{color:#0F1535}
+.err{color:#FFB39E;font-size:14px;min-height:1em}
+.done{display:none;background:#141B42;border:1px solid #273061;border-radius:28px;padding:clamp(24px,3vw,40px);gap:16px}
+.done.on{display:grid}
+.done pre{white-space:pre-wrap;font:15px/1.8 'Alexandria',sans-serif;background:#0F1535;border-radius:14px;padding:16px;margin:0;color:#DADDEA}
+.done .acts{display:flex;flex-wrap:wrap;gap:12px}
+footer{padding:36px max(5vw,16px);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;color:var(--mute);font-size:14px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+footer a{text-decoration:none}
+@media (max-width:900px){
+.hero .wrap,.contact .wrap,.feature{grid-template-columns:minmax(0,1fr)}
+.cards{grid-template-columns:minmax(0,1fr)}
+.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.steps::before{display:none}
+}
+@media (max-width:600px){
+.nav nav{order:3;width:100%;gap:4px 20px;font-size:15px}
+.logo{height:38px}
+.get,.row{grid-template-columns:minmax(0,1fr)}
+.steps{grid-template-columns:minmax(0,1fr)}
+.chip{font-size:12.5px;padding:7px 12px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="word" viewBox="0 -195 740 272"><path d="M154.8 0V-40.4H210.4V0Z M210.4 0V-40.4Q212.2 -40.4 213.3 -34.9Q214.4 -29.4 214.4 -20.4Q214.4 -11.2 213.3 -5.6Q212.2 0 210.4 0Z M97.6 68.6Q76.6 68.6 60 61.1Q43.4 53.6 31.8 40.4Q20.2 27.2 14.1 9.7Q8 -7.8 8 -28Q8 -38.6 9.8 -49.4Q11.6 -60.2 14.6 -69.8L47 -63.6Q44.8 -54 43.8 -45.6Q42.8 -37.2 42.8 -30.2Q42.8 -11 49.6 2Q56.4 15 68.6 21.6Q80.8 28.2 97.2 28.2Q114 28.2 126.4 21.5Q138.8 14.8 145.7 2.2Q152.6 -10.4 152.6 -28.2V-103.8L187.2 -98.6V-28.2Q187.2 -8 181.1 9.6Q175 27.2 163.4 40.4Q151.8 53.6 135.1 61.1Q118.4 68.6 97.6 68.6Z M143.4 0Q125.6 0 112.3 -7.4Q99 -14.8 91.7 -27.1Q84.4 -39.4 84.4 -54.2Q84.4 -66.2 88.9 -76.2Q93.4 -86.2 101.6 -93.7Q109.8 -101.2 120.5 -105.4Q131.2 -109.6 143.6 -109.6Q155.6 -109.6 167 -106.1Q178.4 -102.6 187.2 -98.6L173.2 -62.8Q155.8 -71 143.6 -71Q136 -71 130.6 -68.7Q125.2 -66.4 122.2 -62.7Q119.2 -59 119.2 -55Q119.2 -51.4 121.9 -48.1Q124.6 -44.8 130 -42.6Q135.4 -40.4 143.4 -40.4H176.2V0Z M241.4 -105H276.2V0H210.4V-40.4H241.4Z M210.4 0Q208.6 0 207.5 -5.6Q206.4 -11.2 206.4 -20.4Q206.4 -29.4 207.5 -34.9Q208.6 -40.4 210.4 -40.4Z M392.2 0V-40.4H422.6V0Z M422.6 0V-40.4Q424.4 -40.4 425.5 -34.9Q426.6 -29.4 426.6 -20.4Q426.6 -11.2 425.5 -5.6Q424.4 0 422.6 0Z M305.6 58.2V17.8H339.8Q354.2 17.8 359.5 13.7Q364.8 9.6 364.8 2.2V-98.6H399.4V2.2Q399.4 19.4 392.1 32Q384.8 44.6 371.4 51.4Q358 58.2 339.8 58.2Z M355.6 0Q337.6 0 324.4 -7.4Q311.2 -14.8 303.9 -27.1Q296.6 -39.4 296.6 -54.2Q296.6 -66.2 301.2 -76.2Q305.8 -86.2 313.9 -93.7Q322 -101.2 332.7 -105.4Q343.4 -109.6 355.8 -109.6Q367.8 -109.6 379.2 -106.1Q390.6 -102.6 399.4 -98.6L385.4 -62.8Q368.6 -72.8 355.8 -72.8Q348.2 -72.8 342.8 -70Q337.4 -67.2 334.4 -62.9Q331.4 -58.6 331.4 -54Q331.4 -49.8 334.1 -45.8Q336.8 -41.8 342.2 -39.3Q347.6 -36.8 355.6 -36.8H388.4V0Z M639.6 0Q622.8 0 610.8 -6.8Q598.8 -13.6 592.4 -26.5Q586 -39.4 586 -57.2H620.8Q620.8 -50.6 622.4 -47Q624 -43.4 628 -41.9Q632 -40.4 639.6 -40.4H646.6V0Z M422.6 0Q420.8 0 419.7 -5.6Q418.6 -11.2 418.6 -20.4Q418.6 -29.4 419.7 -34.9Q420.8 -40.4 422.6 -40.4Z M576.8 0Q566.2 0 556.5 -4.9Q546.8 -9.8 540.4 -20.2Q534 -30.6 533.4 -46.6L552.8 -55.8Q553 -47.6 558.2 -43.3Q563.4 -39 569.4 -39Q575.8 -39 580.9 -43.5Q586 -48 586 -57.2V-105H620.8V-50Q620.8 -32.8 614.4 -21.7Q608 -10.6 598 -5.3Q588 0 576.8 0Z M422.6 0V-40.4H433.8Q441.6 -40.4 445.6 -41.9Q449.6 -43.4 451.2 -47Q452.8 -50.6 452.8 -57.2V-85.4H487.4V-57.2Q487.4 -39.4 481 -26.5Q474.6 -13.6 462.7 -6.8Q450.8 0 433.8 0Z M510.4 0Q499.8 0 490.1 -4.9Q480.4 -9.8 473.9 -20.2Q467.4 -30.6 466.8 -46.6L486.2 -55.8Q486.6 -47.6 491.8 -43.3Q497 -39 503 -39Q509.4 -39 514.5 -43.5Q519.6 -48 519.6 -57.2V-95.2H554.4V-50Q554.4 -32.8 548 -21.7Q541.6 -10.6 531.6 -5.3Q521.6 0 510.4 0Z M646.6 0V-40.4Q648.4 -40.4 649.5 -34.9Q650.6 -29.4 650.6 -20.4Q650.6 -11.2 649.5 -5.6Q648.4 0 646.6 0Z M677.6 -105H712.4V0H646.6V-40.4H677.6Z M646.6 0Q644.8 0 643.7 -5.6Q642.6 -11.2 642.6 -20.4Q642.6 -29.4 643.7 -34.9Q644.8 -40.4 646.6 -40.4Z" fill="currentColor"/><circle cx="161.0" cy="-142.6" r="15.2" fill="currentColor"/><circle cx="126.3" cy="-142.6" r="15.3" fill="currentColor"/><circle cx="264.2" cy="33.0" r="15.2" fill="currentColor"/><circle cx="229.5" cy="33.0" r="15.3" fill="currentColor"/><circle cx="707" cy="-131" r="14" fill="#FF5A2C"/><circle cx="669" cy="-160" r="25" fill="#FF5A2C"/></symbol>
+</defs>
+</svg>
+
+<header>
+<div class="nav">
+<a href="#top" aria-label="تسويق — الرئيسية"><svg class="logo" viewBox="0 -195 740 272" role="img" aria-label="تسويق"><use href="#word" x="0" y="-195" width="740" height="272"/></svg></a>
+<nav aria-label="القائمة الرئيسية">
+<a href="#services">خدماتنا</a>
+<a href="#process">طريقة العمل</a>
+<a href="#faq">الأسئلة الشائعة</a>
+<a href="#contact">تواصل معنا</a>
+</nav>
+<a class="btn" href="#contact">اطلب استشارة</a>
+</div>
+</header>
+
+<main id="top">
+<section class="band hero">
+<div class="wrap">
+<div>
+<h1>علامتك تستحق أثرًا أكبر</h1>
+<p class="lead">وكالة تسويق رقمي وإعلانات. نخطط حملاتك، ندير حساباتك على السوشيال ميديا، ونصمم هويتك ونبني موقعك — كل ذلك بخطة واحدة هدفها أن تكبر وتنتشر.</p>
+<div class="ctas">
+<a class="btn btn-ember" href="#contact">ابدأ مشروعك الآن <span aria-hidden="true">←</span></a>
+<a class="btn btn-ghost" href="#services">تعرّف على خدماتنا</a>
+</div>
+<div class="where"><i></i>نعمل عن بُعد مع الشركات في مصر والسعودية والخليج</div>
+</div>
+<div class="fig" aria-hidden="true">
+<svg viewBox="0 0 520 520">
+<g fill="none" stroke="#24305F" stroke-width="1.5">
+<circle cx="260" cy="240" r="110"/><circle cx="260" cy="240" r="175"/><circle cx="260" cy="240" r="240"/>
+</g>
+<g fill="none" stroke="#FF5A2C" stroke-width="2">
+<circle class="ripple" cx="260" cy="240" r="240"/><circle class="ripple" cx="260" cy="240" r="240"/><circle class="ripple" cx="260" cy="240" r="240"/>
+</g>
+<g transform="translate(176 397)">
+<path d="M77 0Q59.8 0 47.1 -4.9Q34.4 -9.8 26.2 -18.3Q18 -26.8 14 -37.5Q10 -48.2 10 -60Q10 -70.8 13.3 -81.8Q16.6 -92.8 23 -102.8L49.8 -90.6Q46.6 -84 45 -77.9Q43.4 -71.8 43.4 -66.2Q43.4 -58.6 46.8 -52.7Q50.2 -46.8 57.5 -43.6Q64.8 -40.4 76 -40.4H160.8V-105H195.4V0Z" fill="#F7F4EE"/>
+<circle cx="122" cy="-128" r="14" fill="#FF5A2C"/><circle cx="84" cy="-157" r="25" fill="#FF5A2C"/>
+</g>
+</svg>
+<span class="chip" style="left:26%;top:13%"><i></i>إعلانات ممولة</span>
+<span class="chip" style="left:76%;top:20%"><i></i>إدارة سوشيال ميديا</span>
+<span class="chip" style="left:24%;top:90%"><i></i>بناء مواقع</span>
+<span class="chip" style="left:74%;top:88%"><i></i>تصميم وهوية بصرية</span>
+</div>
+</div>
+</section>
+
+<section class="band" id="services">
+<div class="wrap">
+<div class="head">
+<h2>كل ما تحتاجه علامتك لتنمو</h2>
+<p class="lead">الإعلانات في القلب من عملنا، وكل خدمة أخرى مصممة لتجعل إعلانك يصل أبعد ويحقق نتيجة أكبر.</p>
+</div>
+<article class="feature">
+<div>
+<span class="tag">خدمتنا الأساسية</span>
+<h3>الإعلانات الممولة</h3>
+<p>حملات على فيسبوك وإنستجرام وتيك توك وجوجل، مبنية على فهم جمهورك وهدفك: مبيعات، رسائل، أو زيارات لمتجرك.</p>
+</div>
+<ul class="ticks">
+<li>تحديد الجمهور المستهدف بدقة حسب المدينة والاهتمامات</li>
+<li>كتابة الإعلانات وتصميمها واختبار أكثر من نسخة</li>
+<li>متابعة يومية وتوزيع الميزانية على الأفضل أداءً</li>
+<li>تقرير واضح بالنتائج وتكلفة كل عميل</li>
+</ul>
+</article>
+<div class="cards">
+<article class="card">
+<svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10h20a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H14l-6 5v-5H6"/><path d="M30 17h4a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-2v5l-6-5h-6a4 4 0 0 1-4-4v-1"/></svg>
+<h3>إدارة سوشيال ميديا</h3>
+<p>حضور ثابت ومنظم على حساباتك، بمحتوى يشبه علامتك ويبني مجتمعًا حولها.</p>
+<ul class="ticks"><li>خطة محتوى شهرية</li><li>تصميم المنشورات والريلز</li><li>الرد على التعليقات والرسائل</li></ul>
+</article>
+<article class="card">
+<svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 5 34 19 22 39 10 19z"/><path d="M22 39V24"/><circle cx="22" cy="21" r="3"/></svg>
+<h3>تصميم وهوية بصرية</h3>
+<p>شعار وألوان وخطوط ونظام بصري كامل يجعل علامتك تُعرف من أول نظرة.</p>
+<ul class="ticks"><li>تصميم الشعار</li><li>دليل الهوية البصرية</li><li>تصاميم الإعلانات والمطبوعات</li></ul>
+</article>
+<article class="card">
+<svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="34" height="28" rx="4"/><path d="M5 15h34"/><path d="M17 23l-4 4 4 4M27 23l4 4-4 4"/></svg>
+<h3>بناء مواقع</h3>
+<p>مواقع ومتاجر سريعة تعمل على الموبايل، مصممة لتحويل الزائر إلى عميل.</p>
+<ul class="ticks"><li>مواقع تعريفية للشركات</li><li>صفحات هبوط للحملات</li><li>متاجر إلكترونية</li></ul>
+</article>
+</div>
+</div>
+</section>
+
+<section class="band process" id="process">
+<div class="wrap">
+<h2>من فكرة صغيرة إلى أثر كبير</h2>
+<p class="lead" style="margin-top:14px">أربع خطوات واضحة، تعرف فيها دائمًا أين وصلنا وماذا بعد.</p>
+<ol class="steps">
+<li><div class="dot"><i style="width:14px;height:14px"></i></div><h3>نفهم نشاطك</h3><p>جلسة نتعرف فيها على منتجك وعملائك ومنافسيك وهدفك من التسويق.</p></li>
+<li><div class="dot"><i style="width:22px;height:22px"></i></div><h3>نبني الخطة</h3><p>خطة مكتوبة بالقنوات والرسائل والميزانية المقترحة، توافق عليها قبل أي خطوة.</p></li>
+<li><div class="dot"><i style="width:32px;height:32px"></i></div><h3>ننفذ ونطلق</h3><p>نصمم المحتوى والإعلانات ونطلق الحملات ونتابعها يوميًا.</p></li>
+<li><div class="dot"><i style="width:44px;height:44px"></i></div><h3>نقيس ونطوّر</h3><p>تقرير دوري بالنتائج، ونحوّل الميزانية لما ينجح أكثر.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<div class="head"><h2>ماذا تحصل عليه معنا</h2></div>
+<div class="get">
+<div><i></i><p><b>فريق واحد لكل شيء</b><span>الإعلانات والمحتوى والتصميم والموقع في مكان واحد، فلا تضيع رسالتك بين أكثر من جهة.</span></p></div>
+<div><i></i><p><b>خطة قبل الإنفاق</b><span>لا نبدأ أي حملة قبل خطة واضحة توافق عليها.</span></p></div>
+<div><i></i><p><b>أرقام مفهومة</b><span>تقارير بلغة بسيطة: كم أنفقنا، وماذا حققنا، وما الخطوة التالية.</span></p></div>
+<div><i></i><p><b>حساباتك ملكك</b><span>الصفحات والحسابات الإعلانية تبقى باسمك وتحت سيطرتك دائمًا.</span></p></div>
+</div>
+</div>
+</section>
+
+<section class="band" id="faq" style="padding-top:0">
+<div class="faq">
+<h2 style="margin-bottom:24px">الأسئلة الشائعة</h2>
+<details><summary>هل تعملون مع شركات خارج مصر؟</summary><p>نعم، نعمل عن بُعد مع الشركات في مصر والسعودية ودول الخليج، ونستهدف جمهورك في أي مدينة تختارها.</p></details>
+<details><summary>كم ميزانية الإعلانات المناسبة للبداية؟</summary><p>تختلف حسب نشاطك وهدفك والمدينة المستهدفة. بعد جلسة التعرف نقترح ميزانية تجريبية مناسبة، ثم نزيدها على ما يثبت نجاحه.</p></details>
+<details><summary>متى تبدأ النتائج في الظهور؟</summary><p>الإعلانات الممولة تبدأ في جلب تفاعل ورسائل خلال الأيام الأولى، بينما بناء الحضور على السوشيال ميديا يحتاج استمرارًا لعدة أشهر.</p></details>
+<details><summary>هل يمكن طلب خدمة واحدة فقط؟</summary><p>بالتأكيد. يمكنك البدء بالإعلانات وحدها أو بتصميم الهوية أو بالموقع، ثم الإضافة لاحقًا.</p></details>
+<details><summary>هل ميزانية الإعلانات ضمن أتعابكم؟</summary><p>لا، ميزانية الإعلانات تُدفع للمنصة الإعلانية مباشرة، وأتعابنا منفصلة وواضحة من البداية.</p></details>
+</div>
+</section>
+
+<section class="band contact" id="contact">
+<div class="wrap">
+<div>
+<h2>جاهز تكبر؟</h2>
+<p class="lead">احكِ لنا عن نشاطك في دقيقة، ونرجع لك بخطة مقترحة.</p>
+<div class="pair" aria-hidden="true"><i style="width:96px;height:96px;right:150px;top:0"></i><i style="width:52px;height:52px;right:84px;top:74px"></i></div>
+</div>
+<div>
+<form id="f" novalidate>
+<div class="row">
+<label>الاسم<input id="n" name="name" autocomplete="name" required></label>
+<label>رقم الموبايل أو واتساب<input id="p" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required></label>
+</div>
+<div class="row">
+<label>اسم النشاط أو الشركة<input id="c" name="company" autocomplete="organization"></label>
+<label>الخدمة المطلوبة<select id="s" name="service"><option>الإعلانات الممولة</option><option>إدارة سوشيال ميديا</option><option>تصميم وهوية بصرية</option><option>بناء موقع</option><option>أكثر من خدمة</option></select></label>
+</div>
+<label>احكِ لنا عن نشاطك وهدفك<textarea id="m" name="message"></textarea></label>
+<p class="err" id="e" role="alert"></p>
+<button class="btn btn-ember" type="submit" style="justify-self:start">أرسل طلبك <span aria-hidden="true">←</span></button>
+</form>
+<div class="done" id="d" aria-live="polite">
+<h3 style="font-size:24px">طلبك جاهز للإرسال</h3>
+<p style="color:#C9CCDB">أرسل هذه الرسالة لنا عبر واتساب لنبدأ فورًا.</p>
+<pre id="msg"></pre>
+<div class="acts">
+<a class="btn btn-ember" id="wa" href="#" target="_blank" rel="noopener">إرسال عبر واتساب</a>
+<button class="btn btn-ghost" type="button" id="cp">نسخ الرسالة</button>
+<button class="btn btn-ghost" type="button" id="bk">تعديل</button>
+</div>
+<p id="wan" style="color:#A9AEC4;font-size:14px"></p>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<svg class="logo" viewBox="0 -195 740 272" role="img" aria-label="تسويق" style="height:36px;color:var(--ink)"><use href="#word" x="0" y="-195" width="740" height="272"/></svg>
+<nav aria-label="روابط سريعة"><a href="#services">خدماتنا</a><a href="#process">طريقة العمل</a><a href="#faq">الأسئلة الشائعة</a><a href="#contact">تواصل معنا</a></nav>
+<span>© 2026 تسويق — Digital Marketing &amp; Advertising</span>
+</div>
+</footer>
+
+<script>
+{
+const WHATSAPP = ''; // ضع رقم واتساب الشركة بالصيغة الدولية بدون + مثل 2010XXXXXXXX
+const f = document.getElementById('f'), d = document.getElementById('d'), e = document.getElementById('e');
+const v = id => document.getElementById(id).value.trim();
+let text = '';
+f.addEventListener('submit', ev => {
+  ev.preventDefault();
+  if (!v('n') || v('p').replace(/\D/g, '').length < 8) { e.textContent = 'من فضلك اكتب الاسم ورقم موبايل صحيح.'; return; }
+  e.textContent = '';
+  text = 'مرحبًا تسويق،\nالاسم: ' + v('n') + '\nالموبايل: ' + v('p') + (v('c') ? '\nالنشاط: ' + v('c') : '') + '\nالخدمة: ' + v('s') + (v('m') ? '\nالتفاصيل: ' + v('m') : '');
+  document.getElementById('msg').textContent = text;
+  const wa = document.getElementById('wa');
+  if (WHATSAPP) { wa.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text); wa.style.display = ''; document.getElementById('wan').textContent = ''; }
+  else { wa.style.display = 'none'; document.getElementById('wan').textContent = 'رقم واتساب الشركة يُضاف قريبًا — انسخ الرسالة واحتفظ بها.'; }
+  f.style.display = 'none'; d.classList.add('on');
+});
+document.getElementById('bk').addEventListener('click', () => { d.classList.remove('on'); f.style.display = ''; });
+document.getElementById('cp').addEventListener('click', async ev => {
+  try { await navigator.clipboard.writeText(text); ev.target.textContent = 'تم النسخ'; }
+  catch { ev.target.textContent = 'حدد النص وانسخه'; }
+  setTimeout(() => ev.target.textContent = 'نسخ الرسالة', 2000);
+});
+}
+</script>
+</body>
+</html>
